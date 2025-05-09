@@ -4,14 +4,20 @@ from VotingApplication_ui import *
 import csv
 
 class VotingLogic(QMainWindow, Ui_VotingApplication):
-    def __init__(self):
+    def __init__(self) -> None:
+        '''
+        Method to setup the UI and button inputs
+        '''
         super().__init__()
         self.setupUi(self)
 
         self.SubmitButton.clicked.connect(lambda : self.submit())
     
-    def submit(self):
-        # Called when submit button gets pressed
+    def submit(self) -> None:
+        '''
+        Method runs when submit button is pressed
+        Checks votes, voter id, and updates csv if there are no errors
+        '''
         id = self.IDInput.text()
         id = id.strip()
         vote = 'None'
