@@ -43,10 +43,7 @@ class VotingLogic(QMainWindow, Ui_VotingApplication):
                 reader = csv.reader(votes_file)
                 for line in reader:
                     if len(line) > 0:
-                        print(line)
                         if line[0].strip() == id:
-                            print(line)
-                            print(id)
                             self.InfoLabel.setText('Already Voted')
                             self.InfoLabel.setStyleSheet('color: red;')
                             break
